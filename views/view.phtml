@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title><?=$article['title']?></title>
+	<link rel="stylesheet" type="text/css" href="/static/news.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+<section id='news'>
+
+	<h2 class='dotted'><?=$article['title']?></h2>
+
+	<div class='news_div dotted'>
+		<?=$article['content']?>
+	</div>
+
+	<a href='/news.php'><h4>Все новости >></h4></a>
+
+</section>
+
+</body>
+
+</html>

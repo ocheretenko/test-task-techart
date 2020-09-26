@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Новости <?php if ($page > 1) echo " - Страница $page"?></title>
+	<link rel="stylesheet" type="text/css" href="/static/news.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+<section id='news'>
+
+<h2 class='dotted'>Новости</h2>
+
+<div class='news_div dotted'>
+<?php 
+
+foreach ($articles as $value) {
+	$date = date('d.m.Y', $value['idate']);
+?>
+	
+	<div class='article'>
+
+	<span class='date'>
+		<?=$date?>
+	</span>
+
+	<a href='/view.php?id=<?=$value['id']?>'>
+		<span class='title'>
+			<?=$value['title'];?>
+		</span>
+	</a>
+	<br>
+	<span class='announce'>
+		<?=$value['announce']?>
+	</span>
+
+	</div>
+	
+<?php
+	}
+
+?>
+</div>
+
+<h4>Страницы:</h4>
+
+<form>
+
+<?php 
+	for ($i=1; $i<= $pagesQuantity; $i++)
+	{
+		?>
+
+			<button class='page-button <?php if ($page == $i) echo 'active-button';?>' name="page" value="<?=$i?>">
+				<?=$i?>
+			</button>
+
+		<?php
+	}
+?>
+
+</form>
+
+</section>
+
+</body>
+
+</html>

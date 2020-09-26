@@ -1,0 +1,24 @@
+<?php
+
+
+const DSN = "mysql:host=localhost;dbname=THE_DATABASE";
+const DB_USER = "LOGIN";
+const DB_PASSWORD = "PASSWORD";
+const DB_TABLE = "news";
+
+const PAGE_ARTICLE_LIMIT = 5;
+
+const DEBUG = false;
+
+
+
+
+
+
+if (DEBUG)
+{
+	ini_set('display_errors', '1'); 
+	ini_set('display_startup_errors', '1');
+	error_reporting(E_ALL);
+	echo "<br>DEBUG-MODE<br>";
+}
